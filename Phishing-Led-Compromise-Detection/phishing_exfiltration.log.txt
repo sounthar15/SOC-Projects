@@ -1,0 +1,8 @@
+Dec 23 15:43:45 LAPTOP-UMIT35BS browser: User alex visited http://malicious-login.xyz
+Dec 23 15:44:10 LAPTOP-UMIT35BS security: Credential dumping detected for user alex
+Dec 23 15:45:02 LAPTOP-UMIT35BS powershell: Executed script evil.ps1
+Dec 23 15:45:30 LAPTOP-UMIT35BS psexec: Remote execution initiated to WIN-SERVER
+Dec 23 15:46:55 LAPTOP-UMIT35BS http: File salary.xlsx uploaded to http://attacker-storage.top
+Dec 23 15:47:22 LAPTOP-UMIT35BS network: C2 beaconing detected to 45.227.10.23 every 60 seconds
+Dec 23 15:47:40 WIN-SERVER security: Unauthorized login from LAPTOP-UMIT35BS using alex credentials
+Dec 23 15:48:05 firewall: ALERT outbound suspicious traffic allowed to 45.227.10.23
