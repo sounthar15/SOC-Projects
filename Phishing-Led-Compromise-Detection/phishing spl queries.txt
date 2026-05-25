@@ -1,0 +1,178 @@
+==============================
+PHISHING DASHBOARD QUERIES
+==============================
+
+
+1. Attack Event Trend
+Purpose:
+Shows attack activity over time
+
+index=phishing
+| timechart count
+
+Chart:
+Line Chart
+
+
+--------------------------------
+
+
+2. Credential Theft Count
+Purpose:
+Shows credential dumping count
+
+index=phishing "Credential dumping"
+| stats count
+
+Chart:
+Single Value
+
+
+--------------------------------
+
+
+3. Phishing URL Activity
+Purpose:
+Shows malicious URL activity
+
+index=phishing malicious-login
+| stats count by host
+
+Chart:
+Pie Chart
+
+
+--------------------------------
+
+
+4. PowerShell Execution Events
+Purpose:
+Shows PowerShell activity
+
+index=phishing powershell
+| table _time host _raw
+
+Chart:
+Table
+
+
+--------------------------------
+
+
+5. Lateral Movement Events
+Purpose:
+Shows PsExec activity
+
+index=phishing psexec
+| stats count by host
+
+Chart:
+Bar Chart
+
+
+--------------------------------
+
+
+6. Data Exfiltration Events
+Purpose:
+Shows file theft activity
+
+index=phishing salary.xlsx
+| table _time host _raw
+
+Chart:
+Table
+
+
+--------------------------------
+
+
+7. C2 Communication Detection
+Purpose:
+Shows attacker beaconing
+
+index=phishing "C2 beaconing"
+| table _time host _raw
+
+Chart:
+Table
+
+
+--------------------------------
+
+
+8. Unauthorized Login Activity
+Purpose:
+Shows compromised login
+
+index=phishing "Unauthorized login"
+| table _time host _raw
+
+Chart:
+Table
+
+
+--------------------------------
+
+
+9. Attack Timeline
+Purpose:
+Shows full attack lifecycle
+
+index=phishing
+| table _time host _raw
+
+Chart:
+Table
+
+
+==============================
+ALERT QUERIES
+==============================
+
+
+ALERT 1
+Phishing URL Alert
+
+index=phishing malicious-login
+
+
+--------------------------------
+
+
+ALERT 2
+Credential Dumping Alert
+
+index=phishing "Credential dumping"
+
+
+--------------------------------
+
+
+ALERT 3
+PowerShell Execution Alert
+
+index=phishing powershell
+
+
+--------------------------------
+
+
+ALERT 4
+Data Exfiltration Alert
+
+index=phishing salary.xlsx
+
+
+--------------------------------
+
+
+ALERT 5
+C2 Communication Alert
+
+index=phishing "C2 beaconing"
+
+
+==============================
+END
+==============================
